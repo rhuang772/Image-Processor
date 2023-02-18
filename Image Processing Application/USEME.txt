@@ -1,0 +1,190 @@
+
+Supported Script Commands:
+
+Loading in images of different file types.
+To use this command the line should be formatted as: 
+load “destination of file” “name of file to be referenced
+
+Examples:
+load res/Frog.ppm frog
+load res/Frog.png frog
+load res/Frog.jpeg frog
+load res/Frog.bmp frog
+
+Disclaimer:
+All the methods listed work for different file types loaded in(ie, a ppm image doesn't have added support that a bmp wouldn’t have, they each have support for the listed commands)
+Furthermore, the commands need to be inputted in lowercase, it won’t recognize Load compared to load.
+
+Flipping Images Horizontally
+To use this command the line should be formatted as: 
+horizontal-flip “name of referenced file” “new name for created image”
+Examples: 
+horizontal-flip frog frog-horiz
+
+Flipping Images Vertically
+To use this command the line should be formatted as: 
+vertical-flip “name of referenced file” “new name for created image”
+Examples: 
+vertical-flip frog frog-horiz
+
+Darkening images by a given amount
+To use this command the line should be formatted as: 
+*The integer must come before the name of the referenced file
+darken “amount to modify” “name of referenced file” “new name for created image”
+Examples: 
+darken 50 frog frog-horiz
+
+Brightening images by a given amount
+To use this command the line should be formatted as: 
+*The integer must come before the name of the referenced file
+brighten “amount to modify” “name of referenced file” “new name for created image”
+Examples: 
+brighten 50 frog frog-horiz
+
+Converting to GreyScale - Red
+To use this command the line should be formatted as: 
+greyscale r “name of referenced file” “new name for created image”
+Examples:
+greyscale r frog frog-Red
+
+Converting to GreyScale - Blue
+To use this command the line should be formatted as: 
+greyscale b “name of referenced file” “new name for created image”
+Examples:
+greyscale b frog frog-Blue
+
+Converting to GreyScale - Green
+To use this command the line should be formatted as: 
+greyscale g “name of referenced file” “new name for created image”
+Examples:
+greyscale g frog frog-Green
+
+Converting to GreyScale - Luma
+To use this command the line should be formatted as: 
+greyscale luma “name of referenced file” “new name for created image”
+Examples:
+greyscale luma frog frog-Luma
+
+Converting to GreyScale - Intensity
+To use this command the line should be formatted as: 
+greyscale intens “name of referenced file” “new name for created image”
+Examples:
+greyscale intens frog frog-Intense
+
+Converting to GreyScale - Value
+To use this command the line should be formatted as: 
+greyscale val “name of referenced file” “new name for created image”
+Examples:
+greyscale val frog frog-val
+
+*Color Transformations:
+
+Image Blurring
+To use this command the line should be formatted as: 
+filter blur “name of referenced file” “new name for created image”
+Examples: 
+filter blur frog frog-blur
+
+Image Sharpening
+To use this command the line should be formatted as: 
+filter sharpen “name of referenced file” “new name for created image”
+Examples: 
+filter sharpen frog frog-sharp
+
+Image GreyScaling Luma
+To use this command the line should be formatted as: 
+filter sharpen “name of referenced file” “new name for created image”
+Examples: 
+filter luma frog frog-luma-2
+*Our controller supports the ability to override previous references, so we label this image as frog-luma-2 since we retained previous functionality.
+
+Image Color Transformation -> SepiaTone
+To use this command the line should be formatted as: 
+filter sharpen “name of referenced file” “new name for created image”
+Examples: 
+filter sepia frog frog-sepia
+
+Saving load images into actual files
+To use this command the line should be formatted as: 
+save “destination of file” “name of referenced file”
+* Disclaimer, the new name of the file must be different than ones already listed within the file destination, it does not create separate files under different formats, i.e Frog.ppm/ Frog.png
+Examples:
+load res/Frog.ppm frog
+load res/Frog.png frog
+load res/Frog.jpeg frog
+load res/Frog.bmp frog
+
+List of all commands to to throw into the controller to test the functionality of program
+*These are the same commands listed throughout the file, and can be applied to any format.
+
+load res/Frog.ppm frog
+brighten 10 frog frog-brighten
+darken 10 frog frog-darken
+horizontal-flip frog frog-Horiz
+vertical-flip frog frog-Vert
+greyscale r frog frog-Red
+greyscale b frog frog-Blue
+greyscale g frog frog-Green
+greyscale luma frog frog-Luma
+greyscale val frog frog-val
+greyscale intens frog frog-Intense
+filter blur frog frog-blur
+filter sharpen frog frog-sharp
+filter luma frog frog-luma-2
+filter sepia frog frog-sepia
+save res/frog-Intense.ppm frog-Intense
+
+Passing in Commands through a Text File
+To load in a given script of command files in the command line arguments for our ImageMain class just type the name of the destination of the file format, nothing else required.
+Also must be a txt file.
+Ex, if the destination was res/”textfile”.txt
+In the program arguments put res/”textfile”.txt
+
+Also can pass it in as a command line argument by typing in “command” and then the destination of the file
+*Also must be a txt file
+Examples
+command res/basicScript.txt
+
+*Assignment 6 Update
+Command Line arguments
+Exact format as laid out within in the instructions
+If you wish to load a script for the program to run and produce the images
+Simply put -file “file-location path”
+
+To have interactive scripting within the controller
+Type “-text” as the arguments, and no other arguments
+This will load back the interactive scripting which supports the previous functionality listed
+
+Lastly not program arguments results in the GUI being loaded automatically,
+
+*There were no new methods/functionality implemented from our previous model besides our support for GUIs, so the previous documentation on how to use our program still applies.
+
+Clarification on the correct main to run:
+To support our previous functionality we still preserved our old main method, which is promptly labeled ImageMain, however our new design/main method with the supported command line arguments can be found within the GUITestMain class, so please use that instead and disregard the previous model(this is already what our current jar uses, but as an extra note don’t mind the extra main that we added within our package)
+
+
+Using our newly implemented GUI
+To start off the GUI, one must load in an image located within their computer to get started an editing images(else an error message will pop up)
+To use the GUI simply press the buttons listed within the GUI to access the methods provided to edit an image.
+
+All Buttons and their Commands:
+Firstly to use the buttons you MUST have an image loaded to be currently worked in. Obviously flipping a blank image would not do anything.
+Buttons: 
+Brighten: after pressing the button you will be prompted to input a value and this value will be the amount that the images get brightened.
+Darken: after pressing the button you will be prompted to input a value and this value will be the amount that the images get darkened.
+Horizontal: flips the listed image Horizontally
+Vertical: flips the listed image Vertically
+GreyScale: After pressing this button, you will be prompted a menu to select one of the greyscale options: red, blue, green, value, intensity, luma
+Filter button: After pressing this button you will be prompted a menu to select one of the image filtering options: blurring, sharpening an image, sepia tone for an image, and luma version of greyscale.
+Load Button: After clicking on the button will be presented a file menu to select an image to load into the program.
+Save Button: to save the image created, you will need to press the save button
+After being prompted to save to a specified folder, you must end the file name with the listed extensions otherwise the file will not write properly.
+
+For instance, say if you were working with a dog image, and then wanted to save it as a ppm
+After selecting the destination you wish to save it to
+You must title the file such as “dog.jpg”
+Supported file types are still the same as the previous assignment: jpgs, pngs, ppms, and bmps.
+
+Exit Button: exits and stops the program entirely.
+
+​​
