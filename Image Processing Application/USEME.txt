@@ -145,7 +145,6 @@ Also can pass it in as a command line argument by typing in “command” and th
 Examples
 command res/basicScript.txt
 
-*Assignment 6 Update
 Command Line arguments
 Exact format as laid out within in the instructions
 If you wish to load a script for the program to run and produce the images
@@ -159,11 +158,8 @@ Lastly not program arguments results in the GUI being loaded automatically,
 
 *There were no new methods/functionality implemented from our previous model besides our support for GUIs, so the previous documentation on how to use our program still applies.
 
-Clarification on the correct main to run:
-To support our previous functionality we still preserved our old main method, which is promptly labeled ImageMain, however our new design/main method with the supported command line arguments can be found within the GUITestMain class, so please use that instead and disregard the previous model(this is already what our current jar uses, but as an extra note don’t mind the extra main that we added within our package)
 
-
-Using our newly implemented GUI
+Using newly implemented GUI
 To start off the GUI, one must load in an image located within their computer to get started an editing images(else an error message will pop up)
 To use the GUI simply press the buttons listed within the GUI to access the methods provided to edit an image.
 
