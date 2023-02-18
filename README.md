@@ -5,7 +5,7 @@ A GUI application that allows for image processing and editing
 Script (To just copy paste and run all commands)
 
 load res/Frog.ppm frog
-brighten 10 frog frog-brighten
+brighten 10 frog frog-brighten\n
 darken 10 frog frog-darken
 horizontal-flip frog frog-Horiz
 vertical-flip frog frog-Vert
