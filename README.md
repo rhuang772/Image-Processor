@@ -1,6 +1,8 @@
 # Image-Processor
 A GUI application that allows for image processing and editing
 
+Contributers: Roger Huang, Nathan Harvey
+
 
 Script (To just copy paste and run all commands)
 
